@@ -1,0 +1,12 @@
+streamlit
+PyPDF2
+langchain
+langchain-community
+langchain_google_genai
+google-cloud
+google-api-core
+google-generativeai
+faiss-cpu
+python-docx
+gtts
+python-dotenv

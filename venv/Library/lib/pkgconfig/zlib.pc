@@ -1,0 +1,13 @@
+prefix=C:/Learner/bot_flask/venv/Library
+exec_prefix=C:/Learner/bot_flask/venv/Library
+libdir=C:/Learner/bot_flask/venv/Library/lib
+sharedlibdir=C:/Learner/bot_flask/venv/Library/lib
+includedir=C:/Learner/bot_flask/venv/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
