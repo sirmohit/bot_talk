@@ -149,6 +149,65 @@ def user_input():
     st.session_state.welcome_message_shown = True
 
 
+# # Helper function to get the base64 encoding of the image
+# def get_base64_image(image_path):
+#     with open(image_path, "rb") as img_file:
+#         return base64.b64encode(img_file.read()).decode()
+
+# # Use the image file
+# image_base64 = get_base64_image("genilogo.jpg")
+
+# st.markdown(f"""
+#     <style>
+#     .chat-message {{ margin-bottom: 10px; padding: 10px; border-radius: 10px; background-color: #e0e0e0; clear: both; max-width: 80%; display: flex; align-items: wide; }}
+#     .chat-message.question {{ align-self: flex-end; background-color: #1d3557; color: white; float: right; text-align: right; margin-left: auto; }}
+#     .chat-message.answer {{ align-self: flex-start; background-color: #262730; color: white; float: left; text-align: left; margin-right: auto; display: flex; align-items: center; }}
+#     .container {{ display: flex; flex-direction: column-reverse; }}
+#     .stTextInput {{ position: fixed; bottom: 0.1rem; padding: 0px; border-radius: 0px; max-width: 902px; right: 40%; left: 26%; }}
+    
+#     /* Fix the bot name and logo */
+#     .fixed-header-container {{
+#         position: fixed;
+#         top: 60px;
+#         left: 400px;
+#         z-index: 1000;
+#         width: 1000px; 
+#         height: 70px; 
+#         background-color: black;
+#     }}
+    
+#     .fixed-header {{
+#         position: absolute;
+#         top: -10px;
+#         left: 85px;
+#         color: white;
+#     }}
+#     .fixed-logo {{
+#         position: absolute;
+#         top: 10px;
+#         left: 0px;
+#         width: 70px;
+#         height: 60px;
+#     }}
+
+#     /* Style for inline logo in responses */
+#     .inline-logo {{
+#         margin-right: 10px;
+#         width: 40px;
+#         height: 40px;
+#     }}
+#     .chat-container, .welcome-message {{
+#         margin-top: 100px;  
+#     }}
+#     </style>
+    
+#     <!-- Bot name and logo container -->
+#     <div class="fixed-header-container">
+#         <img src="data:image/jpeg;base64,{image_base64}" class="fixed-logo">
+#         <h1 class="fixed-header">GENIBOT</h1>
+#     </div>
+#     """, unsafe_allow_html=True)
+
 # Helper function to get the base64 encoding of the image
 def get_base64_image(image_path):
     with open(image_path, "rb") as img_file:
@@ -159,45 +218,128 @@ image_base64 = get_base64_image("genilogo.jpg")
 
 st.markdown(f"""
     <style>
-    .chat-message {{ margin-bottom: 10px; padding: 10px; border-radius: 10px; background-color: #e0e0e0; clear: both; max-width: 80%; display: flex; align-items: center; }}
-    .chat-message.question {{ align-self: flex-end; background-color: #1d3557; color: white; float: right; text-align: right; margin-left: auto; }}
-    .chat-message.answer {{ align-self: flex-start; background-color: #262730; color: white; float: left; text-align: left; margin-right: auto; display: flex; align-items: center; }}
-    .container {{ display: flex; flex-direction: column-reverse; }}
-    .stTextInput {{ position: fixed; bottom: 0.1rem; padding: 0px; border-radius: 0px; max-width: 902px; right: 40%; left: 26%; }}
-    
-    /* Fix the bot name and logo */
+    /* Chat message styles */
+    .chat-message {{ 
+        margin-bottom: 10px; 
+        padding: 10px; 
+        border-radius: 10px; 
+        background-color: #e0e0e0; 
+        clear: both; 
+        max-width: 80%; 
+        display: flex; 
+        align-items: wide; 
+        flex-wrap: wrap;
+    }}
+    .chat-message.question {{ 
+        background-color: #1d3557; 
+        color: white; 
+        float: right; 
+        text-align: right; 
+        margin-left: auto; 
+    }}
+    .chat-message.answer {{
+        align-self: flex-start;     
+        background-color: #262730; 
+        color: white; 
+        float: left; 
+        text-align: left; 
+        margin-right: auto; 
+        display: flex; 
+        align-items: center; 
+    }}
+
+    /* Container for chat history */
+    .container {{ 
+        display: flex; 
+        flex-direction: column-reverse; 
+        flex-grow: 1;
+    }}
+
+    /* Text input fixed at the bottom with responsiveness */
+    .stTextInput {{
+        position: fixed; 
+        bottom: 0.1rem; 
+        padding: 0px; 
+        max-width: 90%; 
+        left: 5%; 
+        right: 5%; 
+        margin: 0 auto;
+    }}
+
+    /* Fix the bot name and logo for different screen sizes */
     .fixed-header-container {{
         position: fixed;
-        top: 60px;
-        left: 400px;
+        top:60px;
+        left: 0;
         z-index: 1000;
-        width: 1000px; 
-        height: 70px; 
+        width: 100%;
+        height: 70px;
         background-color: black;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
     }}
     
     .fixed-header {{
-        position: absolute;
-        top: -10px;
-        left: 85px;
         color: white;
+        font-size: 24px;
+        margin-left: 15px;
+        white-space: nowrap;
     }}
+    
     .fixed-logo {{
-        position: absolute;
-        top: 10px;
-        left: 0px;
-        width: 70px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }}
-
-    /* Style for inline logo in responses */
+            
     .inline-logo {{
         margin-right: 10px;
         width: 40px;
         height: 40px;
     }}
+
+    /* Chat container responsiveness */
     .chat-container, .welcome-message {{
-        margin-top: 100px;  
+        margin-top: 80px; /* Leave space for fixed header */
+        padding: 10px;
+    }}
+
+    /* Responsive Design for smaller screens */
+    @media (max-width: 768px) {{
+        .fixed-header-container {{
+            flex-direction: row;
+            height: 60px;
+        }}
+
+        .fixed-header {{
+            font-size: 18px;
+        }}
+
+        .fixed-logo {{
+            width: 40px;
+            height: 40px;
+        }}
+    }}
+
+    @media (max-width: 480px) {{
+        .fixed-header-container {{
+            height: 50px;
+        }}
+
+        .fixed-header {{
+            font-size: 16px;
+        }}
+
+        .fixed-logo {{
+            width: 30px;
+            height: 30px;
+        }}
+
+        .stTextInput {{
+            max-width: 95%; 
+            left: 2.5%; 
+            right: 2.5%;
+        }}
     }}
     </style>
     
@@ -207,6 +349,8 @@ st.markdown(f"""
         <h1 class="fixed-header">GENIBOT</h1>
     </div>
     """, unsafe_allow_html=True)
+
+
 
 # Display the welcome message
 if not st.session_state.welcome_message_shown:
