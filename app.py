@@ -227,8 +227,8 @@ st.markdown(f"""
         clear: both; 
         max-width: 80%; 
         display: flex; 
-        align-items: wide; 
-        flex-wrap: wrap;
+        align-items: flex-start;  
+        flex-wrap: nowrap; 
     }}
     .chat-message.question {{ 
         background-color: #1d3557; 
@@ -238,14 +238,16 @@ st.markdown(f"""
         margin-left: auto; 
     }}
     .chat-message.answer {{
-        align-self: flex-start;     
+        display: flex;               /* Flexbox to align the logo and text */
+        align-items: flex-start;
         background-color: #262730; 
         color: white; 
         float: left; 
         text-align: left; 
         margin-right: auto; 
-        display: flex; 
-        align-items: center; 
+        max-width: 80%;
+        padding: 10px;
+        border-radius: 10px;
     }}
 
     /* Container for chat history */
@@ -296,6 +298,15 @@ st.markdown(f"""
         margin-right: 10px;
         width: 40px;
         height: 40px;
+        flex-shrink:0;
+        align-self: flex-start; 
+    }}
+            
+    .answer-text {{
+        flex-grow: 1;                /* Text takes up remaining space */
+        word-wrap: break-word;       /* Ensure long words wrap correctly */
+        white-space: pre-wrap;       /* Ensure proper line breaks */
+        display: inline-block;       /* Make sure text behaves inline */
     }}
 
     /* Chat container responsiveness */
@@ -319,6 +330,15 @@ st.markdown(f"""
             width: 40px;
             height: 40px;
         }}
+        .inline-logo {{
+            width: 30px;
+            height: 30px;
+        }}
+        .chat-message.answer {{
+            max-width: 90%;
+        }}
+    
+        
     }}
 
     @media (max-width: 480px) {{
@@ -364,7 +384,7 @@ with chat_container:
     # Display chat history with logo before each answer
     for chat in st.session_state.session_chat:
         st.markdown(f'<div class="chat-message question">{chat["question"]}</div>', unsafe_allow_html=True)
-        st.markdown(f'<div class="chat-message answer"><img src="data:image/jpeg;base64,{image_base64}" class="inline-logo">{chat["answer"]}</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="chat-message answer"><img src="data:image/jpeg;base64,{image_base64}" class="inline-logo"><div class="answer-text">{chat["answer"]}</div></div>', unsafe_allow_html=True)
     
     st.markdown('</div>', unsafe_allow_html=True)
 
