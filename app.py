@@ -76,6 +76,24 @@ def get_conversational_chain():
 
         When answering questions about processes or procedures, provide detailed steps based solely on the context.
 
+        Here are examples:
+
+        Question 1: What is Genillect?
+        Answer: Genillect is an AI solutions company that provides custom AI systems, data training services, and helping businesses automate processes, improve decision-making, and enhance customer experiences—all with top-quality, cost-effective solutions.
+
+        Question 2: What services does Genillect provide?
+        Answer: Genillect offers data transformation services, helping businesses manage and utilize data more effectively. Their solutions focus on data integration, analysis, and visualization.
+
+        Question 3: What expertise does Genillect have in data management?
+        Answer: Genillect specializes in data strategy, data engineering, data science, and machine learning.
+
+        Question 4: What is the mission of Genillect?
+        Answer: Genillect's mission is to empower businesses through innovative data solutions that drive growth and efficiency.
+
+        
+        Question 5: What services does GENILLECT offer to individuals? 
+        Answer:GENILLECT offers transformative AI and data-driven solutions designed to enhance personal and business operations, tailored to meet the unique needs of each individual or business.
+
         Context:\n{context}\n
         Question:\n{question}\n 
         Generate a response based solely on the context above. Do not generate any response that is not grounded in the context.
@@ -149,65 +167,6 @@ def user_input():
     st.session_state.welcome_message_shown = True
 
 
-# # Helper function to get the base64 encoding of the image
-# def get_base64_image(image_path):
-#     with open(image_path, "rb") as img_file:
-#         return base64.b64encode(img_file.read()).decode()
-
-# # Use the image file
-# image_base64 = get_base64_image("genilogo.jpg")
-
-# st.markdown(f"""
-#     <style>
-#     .chat-message {{ margin-bottom: 10px; padding: 10px; border-radius: 10px; background-color: #e0e0e0; clear: both; max-width: 80%; display: flex; align-items: wide; }}
-#     .chat-message.question {{ align-self: flex-end; background-color: #1d3557; color: white; float: right; text-align: right; margin-left: auto; }}
-#     .chat-message.answer {{ align-self: flex-start; background-color: #262730; color: white; float: left; text-align: left; margin-right: auto; display: flex; align-items: center; }}
-#     .container {{ display: flex; flex-direction: column-reverse; }}
-#     .stTextInput {{ position: fixed; bottom: 0.1rem; padding: 0px; border-radius: 0px; max-width: 902px; right: 40%; left: 26%; }}
-    
-#     /* Fix the bot name and logo */
-#     .fixed-header-container {{
-#         position: fixed;
-#         top: 60px;
-#         left: 400px;
-#         z-index: 1000;
-#         width: 1000px; 
-#         height: 70px; 
-#         background-color: black;
-#     }}
-    
-#     .fixed-header {{
-#         position: absolute;
-#         top: -10px;
-#         left: 85px;
-#         color: white;
-#     }}
-#     .fixed-logo {{
-#         position: absolute;
-#         top: 10px;
-#         left: 0px;
-#         width: 70px;
-#         height: 60px;
-#     }}
-
-#     /* Style for inline logo in responses */
-#     .inline-logo {{
-#         margin-right: 10px;
-#         width: 40px;
-#         height: 40px;
-#     }}
-#     .chat-container, .welcome-message {{
-#         margin-top: 100px;  
-#     }}
-#     </style>
-    
-#     <!-- Bot name and logo container -->
-#     <div class="fixed-header-container">
-#         <img src="data:image/jpeg;base64,{image_base64}" class="fixed-logo">
-#         <h1 class="fixed-header">GENIBOT</h1>
-#     </div>
-#     """, unsafe_allow_html=True)
-
 # Helper function to get the base64 encoding of the image
 def get_base64_image(image_path):
     with open(image_path, "rb") as img_file:
@@ -260,7 +219,7 @@ st.markdown(f"""
     /* Text input fixed at the bottom with responsiveness */
     .stTextInput {{
         position: fixed; 
-        bottom: 0.1rem; 
+        bottom: 0rem; 
         padding: 0px; 
         max-width: 90%; 
         left: 5%; 
