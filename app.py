@@ -315,7 +315,7 @@ st.markdown(f"""
         }}
 
         .stTextInput {{
-            max-width: 95%; 
+            max-width: 100%; 
             left: 2.5%; 
             right: 2.5%;
         }}
