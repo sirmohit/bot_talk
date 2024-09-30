@@ -259,6 +259,7 @@ st.markdown(f"""
         height:50px;
         flex-shrink:0;
         align-self:flex-start; 
+    
         
     }}
             
