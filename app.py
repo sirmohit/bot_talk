@@ -258,8 +258,8 @@ st.markdown(f"""
         width: 40px;
         height: 40px;
         flex-shrink:0;
-        align-self: flex-start; 
-        padding-top:8px;
+        align-self: auto; 
+        padding-top:5px
     }}
             
     .answer-text {{
