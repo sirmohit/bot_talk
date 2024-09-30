@@ -197,8 +197,8 @@ st.markdown(f"""
         margin-left: auto; 
     }}
     .chat-message.answer {{
-        display: flex;               /* Flexbox to align the logo and text */
-        align-items:center ;
+        display: flex;               
+        align-items:flex-start ;
         background-color: #262730; 
         color: white; 
         float: left; 
@@ -258,14 +258,15 @@ st.markdown(f"""
         width: 40px;
         height: 40px;
         flex-shrink:0;
-        align-self: center; 
+        align-self: flex-start; 
+        padding-top:8px;
     }}
             
     .answer-text {{
-        flex-grow: 1;                /* Text takes up remaining space */
-        word-wrap: break-word;       /* Ensure long words wrap correctly */
-        white-space: pre-wrap;       /* Ensure proper line breaks */
-        display: inline-block;       /* Make sure text behaves inline */
+        flex-grow: 1;               
+        word-wrap: break-word;       
+        white-space: pre-wrap;       
+        display: inline-block;       
     }}
 
     /* Chat container responsiveness */
