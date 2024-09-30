@@ -349,7 +349,8 @@ with chat_container:
     # Display chat history with logo before each answer
     for chat in st.session_state.session_chat:
         st.markdown(f'<div class="chat-message question">{chat["question"]}</div>', unsafe_allow_html=True)
-        st.markdown(f'<div class="chat-message answer"><img src="data:image/jpeg;base64,{image_base64}" class="inline-logo"><div class="answer-text">{chat["answer"]}</div></div>', unsafe_allow_html=True)
+        #st.markdown(f'<div class="chat-message answer"><img src="data:image/jpeg;base64,{image_base64}" class="inline-logo"><div class="answer-text">{chat["answer"]}</div></div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="chat-message answer"><div class="answer-text">{chat["answer"]}</div></div>', unsafe_allow_html=True)
     
     st.markdown('</div>', unsafe_allow_html=True)
 
