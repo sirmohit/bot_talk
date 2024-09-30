@@ -258,7 +258,7 @@ st.markdown(f"""
         width: 45px;
         height:50px;
         flex-shrink:0;
-        align-self: auto; 
+        align-self:flex-start; 
         padding-top:5px
     }}
             
