@@ -259,7 +259,7 @@ st.markdown(f"""
         height:50px;
         flex-shrink:0;
         align-self:flex-start; 
-        padding-top:5px
+        
     }}
             
     .answer-text {{
