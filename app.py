@@ -255,7 +255,7 @@ st.markdown(f"""
             
     .inline-logo {{
         margin-right: 10px;
-        width: 25px;
+        width: 40px;
         height:40px;
         flex-shrink:0;
         align-self:flex-start; 
@@ -291,8 +291,8 @@ st.markdown(f"""
             height: 40px;
         }}
         .inline-logo {{
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
         }}
         .chat-message.answer {{
             max-width: 90%;
@@ -313,6 +313,11 @@ st.markdown(f"""
         .fixed-logo {{
             width: 30px;
             height: 30px;
+        }}
+            
+        .inline-logo {{
+            width: 40px;
+            height: 40px;
         }}
 
         .stTextInput {{
