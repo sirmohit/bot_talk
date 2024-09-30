@@ -255,7 +255,7 @@ st.markdown(f"""
             
     .inline-logo {{
         margin-right: 10px;
-        width: 40px;
+        width: 30px;
         height:40px;
         flex-shrink:0;
         align-self:flex-start; 
