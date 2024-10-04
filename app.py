@@ -94,6 +94,42 @@ def get_conversational_chain():
         Question 5: What services does GENILLECT offer to individuals? 
         Answer:GENILLECT offers transformative AI and data-driven solutions designed to enhance personal and business operations, tailored to meet the unique needs of each individual or business.
 
+        63 what type of ai you can build
+
+        We can build a wide range of AI systems at Genillect, tailored to your specific requirements. Here are some of the AI solutions we specialize in:
+        Chatbots:
+        Customer support bots
+        Personalized assistants
+        eCommerce bots for shopping recommendations
+        Multi-lingual bots for global users
+        AI for Work Management:
+        Task automation
+        Workflow optimization tools
+        AI-driven decision-making systems
+        Image and Video Analysis:
+        Image recognition and classification
+        Object detection and tracking
+        AI for medical imaging or surveillance
+        Automated content generation from videos or images
+        Natural Language Processing (NLP):
+        AI for text summarization and translation
+        Sentiment analysis
+        Text generation and content writing
+        Speech-to-text and text-to-speech systems
+        Predictive Analytics:
+        AI for demand forecasting
+        Predictive maintenance systems
+        Risk analysis and fraud detection
+        Data Training Solutions:
+        High-quality data curation and feeding solutions for AI training
+        Simplified, reliable, and well-structured datasets
+        Custom AI Solutions:
+        AI for specific industries like healthcare, finance, retail, etc.
+        AI to optimize supply chain, HR systems, or manufacturing processes
+        Personalized AI systems based on your unique business needs
+        If you have a specific idea in mind, let me know, and we can design an AI solution that fits perfectly!
+
+
         Context:\n{context}\n
         Question:\n{question}\n 
         Generate a response based solely on the context above. Do not generate any response that is not grounded in the context.
@@ -148,7 +184,7 @@ if 'user_question' not in st.session_state:
 if 'welcome_message_shown' not in st.session_state:
     st.session_state.welcome_message_shown = False
 
-# Handle user input and generate chatbot response
+#Handle user input and generate chatbot response
 def user_input():
     user_question = st.session_state.user_question
     answer_text = get_answer(user_question)
@@ -292,8 +328,8 @@ st.markdown(f"""
             height: 40px;
         }}
         .inline-logo {{
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
         }}
         .chat-message.answer {{
             max-width: 90%;
@@ -355,8 +391,13 @@ with chat_container:
     
     st.markdown('</div>', unsafe_allow_html=True)
 
-# User input field
+
+
 st.text_input(" ", key="user_question", on_change=user_input, placeholder="Ask your question here...")
 
 if __name__ == "__main__":
     main()
+
+
+
+
