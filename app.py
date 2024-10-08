@@ -412,7 +412,7 @@ import json
 import base64
 import streamlit as st
 from transformers import pipeline  # For paraphrasing
-import sentencepiece
+#import sentencepiece
 
 CHAT_HISTORY_FILE = "chat_history.json"
 os.environ["GOOGLE_API_KEY"] = "AIzaSyBk3TaNDDFBN52nOj3Q01JNRWC8tm0KEFU"
