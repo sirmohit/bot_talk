@@ -10,3 +10,4 @@ faiss-cpu
 python-docx
 gtts
 python-dotenv
+transformers
