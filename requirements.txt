@@ -11,4 +11,3 @@ python-docx
 gtts
 python-dotenv
 transformers
-sentensepiece
