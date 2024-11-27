@@ -12,7 +12,7 @@ import base64
 import streamlit as st
 
 CHAT_HISTORY_FILE = "chat_history.json"
-os.environ["GOOGLE_API_KEY"] = "AIzaSyBk3TaNDDFBN52nOj3Q01JNRWC8tm0KEFU"
+os.environ["GOOGLE_API_KEY"] = "AIzaSyD99bZZBNYzgYu4Zypu07zdIAgjB5UcZrE"
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 
 # Clear chat history at the start of each session
@@ -398,7 +398,7 @@ st.text_input(" ", key="user_question", on_change=user_input, placeholder="Ask y
 if __name__ == "__main__":
     main()
 
-
+#2
 # import os
 # from PyPDF2 import PdfReader
 # from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -412,7 +412,7 @@ if __name__ == "__main__":
 # import base64
 # import streamlit as st
 # from transformers import pipeline  # For paraphrasing
-# #import sentencepiece
+# import sentencepiece
 
 # CHAT_HISTORY_FILE = "chat_history.json"
 # os.environ["GOOGLE_API_KEY"] = "AIzaSyBk3TaNDDFBN52nOj3Q01JNRWC8tm0KEFU"
@@ -768,7 +768,7 @@ if __name__ == "__main__":
 
 
 
-
+# # 3
 
 # import os
 # from PyPDF2 import PdfReader
